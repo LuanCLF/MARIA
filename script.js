@@ -42,45 +42,32 @@ setInterval(() => {
 }, 1500);
 
 // Botão "Começar"
-let player;
-let videoIdAtual = 'yQFImndjBBw';
-
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('youtubePlayer', {
-        height: '0',
-        width: '0',
-        videoId: '', // Inicialmente vazio
-        playerVars: {
-            autoplay: 0,
-            controls: 0,
-            modestbranding: 1,
-        }
-    });
-}
-
-// Quando o botão "Começar" for clicado
 document.getElementById('playBtn').addEventListener('click', () => {
-    if (player && videoIdAtual) {
-        player.loadVideoById(videoIdAtual);
+    const musica = document.getElementById('musica');
+    musica.play().then(() => {
         document.getElementById('overlay').style.display = 'none';
-    } else {
-        alert("Escolha uma música primeiro!");
-    }
+        document.getElementById('audioWrapper').style.display = 'block';
+    }).catch((err) => {
+        console.error('Erro ao tentar tocar áudio:', err);
+    });
 });
 
-// Controle do menu de áudio
+// Controle de áudio (abrir/fechar menu com clique)
 const audioControl = document.getElementById('audioControl');
 const audioMenu = document.getElementById('audioMenu');
 
 audioControl.addEventListener('click', () => {
-    audioMenu.classList.toggle('show');
+    audioMenu.classList.toggle('show'); // troca a classe 'show'
 });
 
-// Trocar música pelo ID do vídeo do YouTube
-function trocarMusica(videoId) {
-    videoIdAtual = videoId;
-    if (player && typeof player.loadVideoById === 'function') {
-        player.loadVideoById(videoId);
+// Trocar música
+function trocarMusica(src) {
+    const musica = document.getElementById('musica');
+    const wasPlaying = !musica.paused;
+    musica.pause();
+    musica.src = src;
+    if (wasPlaying) {
+        musica.play();
     }
-    audioMenu.classList.remove('show');
+    audioMenu.classList.remove('show'); // fecha o menu depois de clicar
 }

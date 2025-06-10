@@ -7,8 +7,6 @@
     <link rel="icon" href="mf.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-    <script src="https://www.youtube.com/iframe_api" defer></script>
-
 </head>
 
 <body>
@@ -16,18 +14,17 @@
         <button id="playBtn">Começar 💖</button>
     </div>
 
-    <div id="youtubePlayer" style="width: 0; height: 0; overflow: hidden;"></div>
-
+    <audio id="musica" loop>
+        <source src="audio/seu-nome.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
 
     <div class="mosaico" id="mosaico"></div>
 
-    <div class="audioWrapper">
+    <div id="audioWrapper">
         <div id="audioControl">🎵</div>
         <div id="audioMenu">
-            <button onclick="trocarMusica('yQFImndjBBw')">Descubra</button>
-            <button onclick="trocarMusica('C8EhP5klMOE')">Descubra</button>
-
-            <!-- <button onclick="trocarMusica('audio/matue-maria.mp3')">Descubra</button>
+            <button onclick="trocarMusica('audio/matue-maria.mp3')">Descubra</button>
             <button onclick="trocarMusica('audio/belo-perfume.mp3')">Descubra</button>
             <button onclick="trocarMusica('audio/belo-pura-adrenalina.mp3')">Descubra</button>
             <button onclick="trocarMusica('audio/bk-amanhecer.mp3')">Descubra</button>
@@ -36,7 +33,7 @@
             <button onclick="trocarMusica('audio/jorge-ben-jor-dumingaz.mp3')">Descubra</button>
             <button onclick="trocarMusica('audio/jorge-ben-me-chamando-de-paixao.mp3')">Descubra</button>
             <button onclick="trocarMusica('audio/matue-maria.mp3')">Descubra</button>
-            <button onclick="trocarMusica('audio/zezo-a-beleza-da-rosa.mp3')">Descubra</button> -->
+            <button onclick="trocarMusica('audio/zezo-a-beleza-da-rosa.mp3')">Descubra</button>
         </div>
     </div>
 </body>
