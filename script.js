@@ -38,7 +38,7 @@ setInterval(() => {
     setTimeout(() => {
         allImgs[index].src = novaSrcCompleta;
         allImgs[index].style.opacity = 1;
-    }, 1000);
+    }, 1500);
 }, 1500);
 
 // Botão "Começar"
