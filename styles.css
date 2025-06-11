@@ -7,17 +7,40 @@ body {
 
 .mosaico {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(4, 1fr);
     width: 100vw;
     height: 100vh;
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    @media screen and (orientation: landscape) {
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
 }
 
 .mosaico img {
-    max-width: calc(100vw / 7);
-    max-height: calc(100vh / 3);
+
     object-fit: cover;
     transition: opacity 1s ease-in-out;
+
+    max-width: calc(100vw / 3);
+    max-height: calc(100vh / 3);
+
+    @media screen and (orientation: landscape) {
+        max-width: calc(100vw / 5);
+        max-height: calc(100vh / 2);
+    }
+
+    @media (min-width: 768px) {
+        max-width: calc(100vw / 7);
+        max-height: calc(100vh / 3);
+    }
 }
 
 #overlay {
