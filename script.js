@@ -1,6 +1,6 @@
 // Gerar imagens aleatórias no mosaico
 const imagens = [];
-const totalImagens = 72;
+const totalImagens = 82;
 for (let i = 1; i <= totalImagens; i++) {
     imagens.push(`imagens/image${i}.jpg`);
 }
