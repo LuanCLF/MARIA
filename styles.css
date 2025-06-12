@@ -25,7 +25,6 @@ body {
 }
 
 .mosaico img {
-
     object-fit: cover;
     transition: opacity 1s ease-in-out;
 
@@ -96,13 +95,22 @@ body {
     position: absolute;
     bottom: 60px;
     right: 0;
-    background: white;
+    background: rgba(255, 255, 255, 0.514);
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: none;
     flex-direction: column;
     gap: 5px;
+
+    button {
+        cursor: pointer;
+        background-color: #ff69b4;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 5px 10px;
+    }
 }
 
 #audioMenu.show {
